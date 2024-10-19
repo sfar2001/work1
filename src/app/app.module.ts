@@ -8,6 +8,7 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { ListCategoriesComponentComponent } from './list-categories-component/list-categories-component.component';
 import { MyPipePipe } from './my-pipe.pipe';
+import { ProductComponent } from './product/product/product.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { MyPipePipe } from './my-pipe.pipe';
     HeaderComponentComponent,
     FooterComponentComponent,
     HomeComponentComponent,
+    ProductComponent,
     ListCategoriesComponentComponent,
+
     MyPipePipe
   ],
   imports: [

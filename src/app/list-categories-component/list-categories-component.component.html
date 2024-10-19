@@ -1,15 +1,14 @@
 <div class="container">
-  <input type="text" class="form-control">
-  <div class="row">
-    <div *ngFor="let item of category" class="col-md-4" style="margin-bottom: 20px;">
-      <img (click)="func1(item.description)" [src]="item.image" alt="Grand électroménager" class="img-fluid h-50 w-75">
-      <h3>{{ item.title| uppercase }}</h3>
-      <h6>{{item.description}}</h6>
-      <button *ngIf="item.available" class="btn btn-primary">Voir produits</button>
+  <input type="text" [(ngModel)]="inputValue" (input)="filterCategories(inputValue)" class="form-control"
+    placeholder="Enter category ID">
 
+  <div class="row">
+    <div *ngFor="let item of filteredCategories" class="col-md-4" style="margin-bottom: 20px;">
+      <img (click)="func1(item.description)" [src]="item.image" alt="Category Image" class="img-fluid h-50 w-75">
+      <h3>{{ item.title | uppercase }}</h3>
+      <h6>{{ item.description }}</h6>
+      <button *ngIf="item.available" class="btn btn-primary" [routerLink]="['/products',item.id]">Voir produits</button>
       <h3 *ngIf="!item.available" style="color:red;">Catégorie non disponible</h3>
     </div>
-
   </div>
-
 </div>

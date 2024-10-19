@@ -1,0 +1,9 @@
+<div class="row">
+  <div *ngFor="let item of list" class="col-md-4" style="margin-bottom: 20px;">
+    <img [src]="item.image" alt="Category Image" class="img-fluid h-50 w-75">
+    <h3>{{ item.name }}</h3>
+    <h6>{{ item.description }}</h6>
+    <button *ngIf="item.name" class="btn btn-primary">Voir produits</button>
+    <h3 *ngIf="!item.price" style="color:red;">Catégorie non disponible</h3>
+  </div>
+</div>
